@@ -1,0 +1,42 @@
+{
+  "nodes": [
+    {
+      "id": 1,
+      "type": "start",
+      "x": 100,
+      "y": 100,
+      "inputs": [],
+      "outputs": [
+        { "id": "out", "name": "Out" }
+      ],
+      "properties": {}
+    },
+    {
+      "id": 2,
+      "type": "drawRectangle",
+      "x": 300,
+      "y": 120,
+      "inputs": [
+        { "id": "in", "name": "In", "type": "input" },
+        { "id": "x", "name": "X", "type": "number", "default": 50 },
+        { "id": "y", "name": "Y", "type": "number", "default": 60 },
+        { "id": "width", "name": "Width", "type": "number", "default": 120 },
+        { "id": "height", "name": "Height", "type": "number", "default": 80 }
+      ],
+      "outputs": [
+        { "id": "out", "name": "Out" }
+      ],
+      "properties": { "fill": false }
+    }
+  ],
+  "connections": [
+    {
+      "id": "conn_1_out_2_in",
+      "fromNode": 1,
+      "fromPort": "out",
+      "toNode": 2,
+      "toPort": "in"
+    }
+  ],
+  "nextNodeId": 3
+}

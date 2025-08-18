@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeCanvas Playground</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <aside id="sidebar">
+            <h2>Blocks</h2>
+            <div id="node-palette">
+                <!-- Dynamically populated by LexerParser.js -->
+            </div>
+        </aside>
+
+        <main id="main-editor-area">
+            <div id="canvas-container">
+                <canvas id="editor-canvas" width="2000" height="1500"></canvas> <!-- Large scrollable world -->
+            </div>
+            <div id="controls">
+                <button id="run-btn" title="Run the program">▶️ Run</button>
+                <button id="view-code-btn" title="Show/Hide Generated Code"> </> Code</button>
+                <button id="save-workspace-btn" title="Save your work">💾 Save</button>
+                <button id="load-workspace-btn" title="Load a saved program">📂 Load</button>
+                <label class="control-label" title="Automatically re-run when changes are made">
+                    <input type="checkbox" id="auto-update-checkbox"> Auto-Run
+                </label>
+            </div>
+            <pre id="code-view" hidden></pre>
+        </main>
+
+        <aside id="output-sidebar">
+            <h2>Output Stage</h2>
+            <div id="output-canvas-container">
+                <canvas id="output-drawing-canvas" width="400" height="300"></canvas>
+            </div>
+        </aside>
+    </div>
+    <script type="module" src="js/MainCompiler.js" defer></script>
+</body>
+</html>

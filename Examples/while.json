@@ -1,0 +1,113 @@
+{
+  "nodes": [
+    {
+      "id": 1,
+      "type": "start",
+      "x": 50,
+      "y": 150,
+      "inputs": [],
+      "outputs": [{ "id": "out", "name": "▶", "portType": "exec", "dataType": "exec" }],
+      "properties": {}
+    },
+    {
+      "id": 2,
+      "type": "setVariable",
+      "x": 200,
+      "y": 100,
+      "inputs": [
+        { "id": "in", "name": "Exec", "portType": "exec", "dataType": "exec" },
+        { "id": "name", "name": "Var Name", "portType": "data", "dataType": "string", "default": "counter" },
+        { "id": "value", "name": "Value", "portType": "data", "dataType": "expression", "default": "5" }
+      ],
+      "outputs": [{ "id": "out", "name": "▶", "portType": "exec", "dataType": "exec" }],
+      "properties": {}
+    },
+    {
+      "id": 3,
+      "type": "setVariable",
+      "x": 200,
+      "y": 200,
+      "inputs": [
+        { "id": "in", "name": "Exec", "portType": "exec", "dataType": "exec" },
+        { "id": "name", "name": "Var Name", "portType": "data", "dataType": "string", "default": "radius" },
+        { "id": "value", "name": "Value", "portType": "data", "dataType": "expression", "default": "30" }
+      ],
+      "outputs": [{ "id": "out", "name": "▶", "portType": "exec", "dataType": "exec" }],
+      "properties": {}
+    },
+    {
+      "id": 4,
+      "type": "while",
+      "x": 400,
+      "y": 150,
+      "inputs": [
+        { "id": "in", "name": "Exec", "portType": "exec", "dataType": "exec" },
+        { "id": "condition", "name": "Cond", "portType": "data", "dataType": "expression", "default": "variables.counter > 0" }
+      ],
+      "outputs": [
+        { "id": "body", "name": "Loop", "portType": "exec", "dataType": "exec" },
+        { "id": "out", "name": "Next", "portType": "exec", "dataType": "exec" }
+      ],
+      "properties": {}
+    },
+    {
+      "id": 5,
+      "type": "getVariable",
+      "x": 450,
+      "y": 280,
+      "inputs": [{ "id": "name", "name": "Var Name", "portType": "data", "dataType": "string", "default": "radius" }],
+      "outputs": [{ "id": "value", "name": "Val Out", "portType": "data", "dataType": "any" }],
+      "properties": {}
+    },
+    {
+      "id": 6,
+      "type": "drawCircle",
+      "x": 650,
+      "y": 250,
+      "inputs": [
+        { "id": "in", "name": "Exec", "portType": "exec", "dataType": "exec" },
+        { "id": "x", "name": "CX", "portType": "data", "dataType": "number", "default": 150 },
+        { "id": "y", "name": "CY", "portType": "data", "dataType": "number", "default": 150 },
+        { "id": "radius", "name": "R", "portType": "data", "dataType": "number", "default": 30 }
+      ],
+      "outputs": [{ "id": "out", "name": "▶", "portType": "exec", "dataType": "exec" }],
+      "properties": { "fill": false }
+    },
+    {
+      "id": 7,
+      "type": "setVariable",
+      "x": 850,
+      "y": 200,
+      "inputs": [
+        { "id": "in", "name": "Exec", "portType": "exec", "dataType": "exec" },
+        { "id": "name", "name": "Var Name", "portType": "data", "dataType": "string", "default": "radius" },
+        { "id": "value", "name": "Value", "portType": "data", "dataType": "expression", "default": "variables.radius - 5" }
+      ],
+      "outputs": [{ "id": "out", "name": "▶", "portType": "exec", "dataType": "exec" }],
+      "properties": {}
+    },
+    {
+      "id": 8,
+      "type": "setVariable",
+      "x": 850,
+      "y": 300,
+      "inputs": [
+        { "id": "in", "name": "Exec", "portType": "exec", "dataType": "exec" },
+        { "id": "name", "name": "Var Name", "portType": "data", "dataType": "string", "default": "counter" },
+        { "id": "value", "name": "Value", "portType": "data", "dataType": "expression", "default": "variables.counter - 1" }
+      ],
+      "outputs": [{ "id": "out", "name": "▶", "portType": "exec", "dataType": "exec" }],
+      "properties": {}
+    }
+  ],
+  "connections": [
+    { "id": "conn_1_out_2_in_exec", "fromNode": 1, "fromPort": "out", "fromPortType": "exec", "toNode": 2, "toPort": "in", "toPortType": "exec" },
+    { "id": "conn_2_out_3_in_exec", "fromNode": 2, "fromPort": "out", "fromPortType": "exec", "toNode": 3, "toPort": "in", "toPortType": "exec" },
+    { "id": "conn_3_out_4_in_exec", "fromNode": 3, "fromPort": "out", "fromPortType": "exec", "toNode": 4, "toPort": "in", "toPortType": "exec" },
+    { "id": "conn_4_body_6_in_exec", "fromNode": 4, "fromPort": "body", "fromPortType": "exec", "toNode": 6, "toPort": "in", "toPortType": "exec" },
+    { "id": "conn_5_value_6_radius_data", "fromNode": 5, "fromPort": "value", "fromPortType": "data", "toNode": 6, "toPort": "radius", "toPortType": "data" },
+    { "id": "conn_6_out_7_in_exec", "fromNode": 6, "fromPort": "out", "fromPortType": "exec", "toNode": 7, "toPort": "in", "toPortType": "exec" },
+    { "id": "conn_7_out_8_in_exec", "fromNode": 7, "fromPort": "out", "fromPortType": "exec", "toNode": 8, "toPort": "in", "toPortType": "exec" }
+  ],
+  "nextNodeId": 9
+}

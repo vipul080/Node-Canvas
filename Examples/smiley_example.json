@@ -1,0 +1,106 @@
+{
+  "nodes": [
+    {
+      "id": 1,
+      "type": "start",
+      "x": 100,
+      "y": 100,
+      "inputs": [],
+      "outputs": [ { "id": "out", "name": "Out" } ],
+      "properties": {}
+    },
+    {
+      "id": 2,
+      "type": "drawCircle",
+      "x": 300,
+      "y": 120,
+      "inputs": [
+        { "id": "in", "name": "In", "type": "input" },
+        { "id": "x", "name": "X", "type": "number", "default": 200 },
+        { "id": "y", "name": "Y", "type": "number", "default": 200 },
+        { "id": "radius", "name": "Radius", "type": "number", "default": 80 }
+      ],
+      "outputs": [ { "id": "out", "name": "Out" } ],
+      "properties": { "fill": false }
+    },
+    {
+      "id": 3,
+      "type": "drawCircle",
+      "x": 250,
+      "y": 80,
+      "inputs": [
+        { "id": "in", "name": "In", "type": "input" },
+        { "id": "x", "name": "X", "type": "number", "default": 170 },
+        { "id": "y", "name": "Y", "type": "number", "default": 180 },
+        { "id": "radius", "name": "Radius", "type": "number", "default": 10 }
+      ],
+      "outputs": [ { "id": "out", "name": "Out" } ],
+      "properties": { "fill": true }
+    },
+    {
+      "id": 4,
+      "type": "drawCircle",
+      "x": 350,
+      "y": 80,
+      "inputs": [
+        { "id": "in", "name": "In", "type": "input" },
+        { "id": "x", "name": "X", "type": "number", "default": 230 },
+        { "id": "y", "name": "Y", "type": "number", "default": 180 },
+        { "id": "radius", "name": "Radius", "type": "number", "default": 10 }
+      ],
+      "outputs": [ { "id": "out", "name": "Out" } ],
+      "properties": { "fill": true }
+    },
+    {
+      "id": 5,
+      "type": "drawCircle",
+      "x": 300,
+      "y": 250,
+      "inputs": [
+        { "id": "in", "name": "In", "type": "input" },
+        { "id": "x", "name": "X", "type": "number", "default": 200 },
+        { "id": "y", "name": "Y", "type": "number", "default": 230 },
+        { "id": "radius", "name": "Radius", "type": "number", "default": 30 }
+      ],
+      "outputs": [ { "id": "out", "name": "Out" } ],
+      "properties": { "fill": true }
+    },
+    {
+      "id": 6,
+      "type": "drawCircle",
+      "x": 200,
+      "y": 250,
+      "inputs": [
+        { "id": "in", "name": "In", "type": "input" },
+        { "id": "x", "name": "X", "type": "number", "default": 160 },
+        { "id": "y", "name": "Y", "type": "number", "default": 240 },
+        { "id": "radius", "name": "Radius", "type": "number", "default": 10 }
+      ],
+      "outputs": [ { "id": "out", "name": "Out" } ],
+      "properties": { "fill": true }
+    },
+    {
+      "id": 7,
+      "type": "drawCircle",
+      "x": 400,
+      "y": 250,
+      "inputs": [
+        { "id": "in", "name": "In", "type": "input" },
+        { "id": "x", "name": "X", "type": "number", "default": 240 },
+        { "id": "y", "name": "Y", "type": "number", "default": 240 },
+        { "id": "radius", "name": "Radius", "type": "number", "default": 10 }
+      ],
+      "outputs": [ { "id": "out", "name": "Out" } ],
+      "properties": { "fill": true }
+    }
+  ],
+  "connections": [
+    { "id": "conn_1_out_2_in", "fromNode": 1, "fromPort": "out", "toNode": 2, "toPort": "in" },
+    { "id": "conn_2_out_3_in", "fromNode": 2, "fromPort": "out", "toNode": 3, "toPort": "in" },
+    { "id": "conn_3_out_4_in", "fromNode": 3, "fromPort": "out", "toNode": 4, "toPort": "in" },
+    { "id": "conn_4_out_5_in", "fromNode": 4, "fromPort": "out", "toNode": 5, "toPort": "in" },
+    { "id": "conn_5_out_6_in", "fromNode": 5, "fromPort": "out", "toNode": 6, "toPort": "in" },
+    { "id": "conn_6_out_7_in", "fromNode": 6, "fromPort": "out", "toNode": 7, "toPort": "in" }
+  ],
+  "nextNodeId": 8
+}

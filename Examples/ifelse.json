@@ -1,0 +1,90 @@
+{
+  "nodes": [
+    {
+      "id": 1,
+      "type": "start",
+      "x": 50,
+      "y": 150,
+      "inputs": [],
+      "outputs": [{ "id": "out", "name": "▶", "portType": "exec", "dataType": "exec" }],
+      "properties": {}
+    },
+    {
+      "id": 2,
+      "type": "if",
+      "x": 250,
+      "y": 150,
+      "inputs": [
+        { "id": "in", "name": "Exec", "portType": "exec", "dataType": "exec" },
+        { "id": "condition", "name": "Cond", "portType": "data", "dataType": "expression", "default": "10 > 5" }
+      ],
+      "outputs": [
+        { "id": "then", "name": "True", "portType": "exec", "dataType": "exec" },
+        { "id": "else", "name": "False", "portType": "exec", "dataType": "exec" },
+        { "id": "out", "name": "Next", "portType": "exec", "dataType": "exec" }
+      ],
+      "properties": {}
+    },
+    {
+      "id": 3,
+      "type": "setColor",
+      "x": 450,
+      "y": 80,
+      "inputs": [
+        { "id": "in", "name": "Exec", "portType": "exec", "dataType": "exec" },
+        { "id": "color", "name": "Color", "portType": "data", "dataType": "color", "default": "#FF0000" }
+      ],
+      "outputs": [{ "id": "out", "name": "▶", "portType": "exec", "dataType": "exec" }],
+      "properties": {}
+    },
+    {
+      "id": 4,
+      "type": "drawCircle",
+      "x": 650,
+      "y": 80,
+      "inputs": [
+        { "id": "in", "name": "Exec", "portType": "exec", "dataType": "exec" },
+        { "id": "x", "name": "CX", "portType": "data", "dataType": "number", "default": 100 },
+        { "id": "y", "name": "CY", "portType": "data", "dataType": "number", "default": 100 },
+        { "id": "radius", "name": "R", "portType": "data", "dataType": "number", "default": 30 }
+      ],
+      "outputs": [{ "id": "out", "name": "▶", "portType": "exec", "dataType": "exec" }],
+      "properties": { "fill": true }
+    },
+    {
+      "id": 5,
+      "type": "setColor",
+      "x": 450,
+      "y": 220,
+      "inputs": [
+        { "id": "in", "name": "Exec", "portType": "exec", "dataType": "exec" },
+        { "id": "color", "name": "Color", "portType": "data", "dataType": "color", "default": "#0000FF" }
+      ],
+      "outputs": [{ "id": "out", "name": "▶", "portType": "exec", "dataType": "exec" }],
+      "properties": {}
+    },
+    {
+      "id": 6,
+      "type": "drawRectangle",
+      "x": 650,
+      "y": 220,
+      "inputs": [
+        { "id": "in", "name": "Exec", "portType": "exec", "dataType": "exec" },
+        { "id": "x", "name": "X", "portType": "data", "dataType": "number", "default": 150 },
+        { "id": "y", "name": "Y", "portType": "data", "dataType": "number", "default": 150 },
+        { "id": "width", "name": "W", "portType": "data", "dataType": "number", "default": 60 },
+        { "id": "height", "name": "H", "portType": "data", "dataType": "number", "default": 40 }
+      ],
+      "outputs": [{ "id": "out", "name": "▶", "portType": "exec", "dataType": "exec" }],
+      "properties": { "fill": true }
+    }
+  ],
+  "connections": [
+    { "id": "conn_1_out_2_in", "fromNode": 1, "fromPort": "out", "fromPortType": "exec", "toNode": 2, "toPort": "in", "toPortType": "exec" },
+    { "id": "conn_2_then_3_in", "fromNode": 2, "fromPort": "then", "fromPortType": "exec", "toNode": 3, "toPort": "in", "toPortType": "exec" },
+    { "id": "conn_3_out_4_in", "fromNode": 3, "fromPort": "out", "fromPortType": "exec", "toNode": 4, "toPort": "in", "toPortType": "exec" },
+    { "id": "conn_2_else_5_in", "fromNode": 2, "fromPort": "else", "fromPortType": "exec", "toNode": 5, "toPort": "in", "toPortType": "exec" },
+    { "id": "conn_5_out_6_in", "fromNode": 5, "fromPort": "out", "fromPortType": "exec", "toNode": 6, "toPort": "in", "toPortType": "exec" }
+  ],
+  "nextNodeId": 7
+}

@@ -1,0 +1,101 @@
+{
+  "nodes": [
+    {
+      "id": 1,
+      "type": "start",
+      "x": 50,
+      "y": 50,
+      "inputs": [],
+      "outputs": [{ "id": "out", "name": "▶", "portType": "exec", "dataType": "exec" }],
+      "properties": {}
+    },
+    {
+      "id": 2,
+      "type": "function",
+      "x": 50,
+      "y": 150,
+      "inputs": [
+        { "id": "in", "name": "Exec", "portType": "exec", "dataType": "exec" },
+        { "id": "name", "name": "Name", "portType": "data", "dataType": "string", "default": "drawGreenSquare" }
+      ],
+      "outputs": [
+        { "id": "body", "name": "Define", "portType": "exec", "dataType": "exec" },
+        { "id": "out", "name": "Next", "portType": "exec", "dataType": "exec" }
+      ],
+      "properties": {}
+    },
+    {
+      "id": 3,
+      "type": "setColor",
+      "x": 250,
+      "y": 200,
+      "inputs": [
+        { "id": "in", "name": "Exec", "portType": "exec", "dataType": "exec" },
+        { "id": "color", "name": "Color", "portType": "data", "dataType": "color", "default": "#2ECC71" }
+      ],
+      "outputs": [{ "id": "out", "name": "▶", "portType": "exec", "dataType": "exec" }],
+      "properties": {}
+    },
+    {
+      "id": 4,
+      "type": "drawRectangle",
+      "x": 450,
+      "y": 200,
+      "inputs": [
+        { "id": "in", "name": "Exec", "portType": "exec", "dataType": "exec" },
+        { "id": "x", "name": "X", "portType": "data", "dataType": "number", "default": 50 },
+        { "id": "y", "name": "Y", "portType": "data", "dataType": "number", "default": 50 },
+        { "id": "width", "name": "W", "portType": "data", "dataType": "number", "default": 40 },
+        { "id": "height", "name": "H", "portType": "data", "dataType": "number", "default": 40 }
+      ],
+      "outputs": [{ "id": "out", "name": "▶", "portType": "exec", "dataType": "exec" }],
+      "properties": { "fill": true }
+    },
+    {
+      "id": 5,
+      "type": "callFunction",
+      "x": 250,
+      "y": 50,
+      "inputs": [
+        { "id": "in", "name": "Exec", "portType": "exec", "dataType": "exec" },
+        { "id": "name", "name": "Name", "portType": "data", "dataType": "string", "default": "drawGreenSquare" }
+      ],
+      "outputs": [{ "id": "out", "name": "▶", "portType": "exec", "dataType": "exec" }],
+      "properties": {}
+    },
+    {
+      "id": 6,
+      "type": "moveTo",
+      "x": 450,
+      "y": 50,
+      "inputs": [
+        { "id": "in", "name": "Exec", "portType": "exec", "dataType": "exec" },
+        { "id": "x", "name": "X", "portType": "data", "dataType": "number", "default": 0 },
+        { "id": "y", "name": "Y", "portType": "data", "dataType": "number", "default": 0 }
+      ],
+      "outputs": [{ "id": "out", "name": "▶", "portType": "exec", "dataType": "exec" }],
+      "properties": {}
+    },
+    {
+      "id": 7,
+      "type": "callFunction",
+      "x": 650,
+      "y": 50,
+      "inputs": [
+        { "id": "in", "name": "Exec", "portType": "exec", "dataType": "exec" },
+        { "id": "name", "name": "Name", "portType": "data", "dataType": "string", "default": "drawGreenSquare" }
+      ],
+      "outputs": [{ "id": "out", "name": "▶", "portType": "exec", "dataType": "exec" }],
+      "properties": {}
+    }
+  ],
+  "connections": [
+    { "id": "conn_1_out_2_in", "fromNode": 1, "fromPort": "out", "fromPortType": "exec", "toNode": 2, "toPort": "in", "toPortType": "exec" },
+    { "id": "conn_2_body_3_in", "fromNode": 2, "fromPort": "body", "fromPortType": "exec", "toNode": 3, "toPort": "in", "toPortType": "exec" },
+    { "id": "conn_3_out_4_in", "fromNode": 3, "fromPort": "out", "fromPortType": "exec", "toNode": 4, "toPort": "in", "toPortType": "exec" },
+    { "id": "conn_2_out_5_in", "fromNode": 2, "fromPort": "out", "fromPortType": "exec", "toNode": 5, "toPort": "in", "toPortType": "exec" },
+    { "id": "conn_5_out_6_in", "fromNode": 5, "fromPort": "out", "fromPortType": "exec", "toNode": 6, "toPort": "in", "toPortType": "exec" },
+    { "id": "conn_6_out_7_in", "fromNode": 6, "fromPort": "out", "fromPortType": "exec", "toNode": 7, "toPort": "in", "toPortType": "exec" }
+  ],
+  "nextNodeId": 8
+}
