@@ -97,6 +97,14 @@ class MainCompiler {
 
     const loadBtn = document.getElementById('load-workspace-btn');
     if (loadBtn) loadBtn.addEventListener('click', () => this.loadWorkspace());
+
+    const exampleSelect = document.getElementById('example-select');
+    if (exampleSelect) {
+      exampleSelect.addEventListener('change', (e) => {
+        if (e.target.value) this.loadExample(e.target.value);
+        e.target.value = '';
+      });
+    }
   }
   
   runProgram() {
@@ -182,14 +190,7 @@ class MainCompiler {
         const reader = new FileReader();
         reader.onload = (event) => {
           try {
-            const graphData = JSON.parse(event.target.result);
-            this.ast.fromJSON(graphData);
-            if (this.lexerParser && typeof this.lexerParser.refreshCanvas === 'function') {
-                this.lexerParser.refreshCanvas();
-            }
-            if (this.isAutoUpdateEnabled) { 
-                this.requestAutoRun();
-            }
+            this.applyGraph(JSON.parse(event.target.result));
           } catch (error) {
             console.error('Error loading workspace:', error);
             alert('Oh no! Could not load that file. Is it a NodeCanvas program?');
@@ -199,6 +200,27 @@ class MainCompiler {
       }
     };
     fileInput.click();
+  }
+
+  async loadExample(fileName) {
+    try {
+      const response = await fetch(`Examples/${fileName}`);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      this.applyGraph(await response.json());
+    } catch (error) {
+      console.error('Error loading example:', error);
+      alert('Oh no! Could not load that example.');
+    }
+  }
+
+  applyGraph(graphData) {
+    this.ast.fromJSON(graphData);
+    if (this.lexerParser && typeof this.lexerParser.refreshCanvas === 'function') {
+        this.lexerParser.refreshCanvas();
+    }
+    if (this.isAutoUpdateEnabled) {
+        this.requestAutoRun();
+    }
   }
 }
 

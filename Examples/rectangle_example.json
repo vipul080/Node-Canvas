@@ -7,7 +7,12 @@
       "y": 100,
       "inputs": [],
       "outputs": [
-        { "id": "out", "name": "Out" }
+        {
+          "id": "out",
+          "name": "Out",
+          "portType": "exec",
+          "dataType": "exec"
+        }
       ],
       "properties": {}
     },
@@ -17,16 +22,52 @@
       "x": 300,
       "y": 120,
       "inputs": [
-        { "id": "in", "name": "In", "type": "input" },
-        { "id": "x", "name": "X", "type": "number", "default": 50 },
-        { "id": "y", "name": "Y", "type": "number", "default": 60 },
-        { "id": "width", "name": "Width", "type": "number", "default": 120 },
-        { "id": "height", "name": "Height", "type": "number", "default": 80 }
+        {
+          "id": "in",
+          "name": "In",
+          "portType": "exec",
+          "dataType": "exec"
+        },
+        {
+          "id": "x",
+          "name": "X",
+          "default": 50,
+          "portType": "data",
+          "dataType": "number"
+        },
+        {
+          "id": "y",
+          "name": "Y",
+          "default": 60,
+          "portType": "data",
+          "dataType": "number"
+        },
+        {
+          "id": "width",
+          "name": "Width",
+          "default": 120,
+          "portType": "data",
+          "dataType": "number"
+        },
+        {
+          "id": "height",
+          "name": "Height",
+          "default": 80,
+          "portType": "data",
+          "dataType": "number"
+        }
       ],
       "outputs": [
-        { "id": "out", "name": "Out" }
+        {
+          "id": "out",
+          "name": "Out",
+          "portType": "exec",
+          "dataType": "exec"
+        }
       ],
-      "properties": { "fill": false }
+      "properties": {
+        "fill": false
+      }
     }
   ],
   "connections": [
@@ -35,7 +76,9 @@
       "fromNode": 1,
       "fromPort": "out",
       "toNode": 2,
-      "toPort": "in"
+      "toPort": "in",
+      "fromPortType": "exec",
+      "toPortType": "exec"
     }
   ],
   "nextNodeId": 3

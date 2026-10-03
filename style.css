@@ -133,6 +133,17 @@ body, html {
   border: 1px solid #E2E8F0;
 }
 
+#example-select {
+  padding: 8px 10px;
+  border: 1px solid #CBD5E0;
+  border-radius: 6px;
+  background: #FFFFFF;
+  color: #334155;
+  font: inherit;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
 .control-label {
   margin-left: auto; 
   color: #475569;

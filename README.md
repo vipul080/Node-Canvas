@@ -4,6 +4,10 @@ A visual, node-based programming playground for beginners. Drag blocks onto a ca
 together, and NodeCanvas compiles the graph to JavaScript and runs it on a live drawing stage.
 It runs entirely in the browser: no build step, no dependencies.
 
+**Try it live: https://vipul080.github.io/Node-Canvas/**
+
+> Best on a desktop or laptop: the editor uses mouse drag-and-drop and doesn't support touch yet.
+
 ## Features
 
 - **Drag-and-drop blocks**: a palette of kid-friendly blocks you wire together on a large, scrollable canvas.
@@ -15,8 +19,9 @@ It runs entirely in the browser: no build step, no dependencies.
 - **Run / Auto-Run**: run the program once, or re-run automatically whenever the graph changes.
 - **View Code**: see the JavaScript generated from your blocks.
 - **Save / Load**: export a program as JSON and load it back.
+- **Examples**: open a sample program from the 📚 Examples menu.
 
-## Getting Started
+## Running Locally
 
 ES modules don't load from `file://` in most browsers, so serve the folder over HTTP:
 
@@ -28,7 +33,7 @@ npx serve .            # or: python -m http.server 8000
 
 Then open the printed URL (e.g. http://localhost:3000 or http://localhost:8000).
 
-To try a sample, click **📂 Load** and pick a file from `Examples/`.
+To try a sample, pick one from the **📚 Examples** menu.
 
 ## How It Works
 
@@ -58,7 +63,7 @@ Node-Canvas/
     ├── ifelse.json
     ├── loop.json
     ├── while.json
-    └── functins.json
+    └── functions.json
 ```
 
 ## License
